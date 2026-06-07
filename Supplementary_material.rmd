@@ -1,0 +1,1356 @@
+---
+title: "Cognitive biases in ecosystem service provider networks may obstruct the ecological intensification of agriculture"
+subtitle: "Supplementary Material"
+date: "`r format(Sys.Date())`"
+output:
+  bookdown::html_document2:
+    toc: true
+    toc_depth: 3
+    number_sections: false
+    theme: cosmo
+    df_print: paged
+  bookdown::pdf_document2:
+    toc: true
+    number_sections: false
+language:
+  label:
+    fig: "Supplementary Figure "
+    tab: "Supplementary Table "
+header-includes:
+  - \usepackage[labelfont=bf]{caption}
+  - \captionsetup[table]{name=Supplementary Table, skip=\baselineskip}
+  - \captionsetup[figure]{name=Supplementary Figure, skip=\baselineskip}
+---
+
+<style>
+  body { line-height: 1.6; font-size: 16px; }
+  #TOC { margin-top: 40px; margin-bottom: 40px; padding: 20px; background-color: #f9f9f9; border-radius: 5px; }
+  .title { margin-top: 60px; margin-bottom: 20px; }
+  .subtitle { margin-bottom: 30px; }
+  .author { margin-bottom: 40px; }
+</style>
+
+Gábor Pozsgai^1,2,3\*§^, Kris A.G. Wyckhuys^1,2,4,5,6§^, Ibtissem Ben Fekih^1,7,8§^, Liette Vasseur^1,2,9^, Geoff Gurr^1,2,10^, Mark Goettel^1,2,11^, Heather VanVolkenburg^9^, Sunita Pandey^12^, Jamile Queiroz-Sousa^13^, Pingyang Zhu^14^, Mohammed Abul Monjur Khan^15^, Titus Imboma^1,2,16^, Margaret Hughes^17,18^, Jian Liu1^9^, Syed Rizvi^20^, Olivia Reynolds^1,2,10^, Hafiz Sohaib Ahmed Saqib^1,2,21^, Stephen Wratten^1,2,22†^, Jie Zhang^1,2,23^, Wenwu Zhou^24^, Francisco Javier Garcia^25^, Lucas Alexander Shuttleworth^26^, Li-Lin Chen^1,2^, Gábor L. Lövei^1,2,13\*^, Minsheng You^1,2\*^
+
+^1^State Key Laboratory of Agriculture and Forestry Biosecurity, Institute of Applied Ecology, Fujian Agriculture and Forestry University, Fuzhou 350002, China
+
+^2^Joint International Research Laboratory of Ecological Pest Control, Ministry of Education, Fuzhou 350002, China
+
+^3^University of the Azores, Angra do Heroismo, Portugal
+
+^4^Chrysalis Consulting, Danang, Vietnam
+
+^5^School of the Environment, The University of Queensland, Saint Lucia, Australia
+
+^6^Institute of Plant Protection, Chinese Academy of Agricultural Sciences (CAAS), Beijing, China
+
+^7^Institute of Environmental Microbiology, College of Resources and Environment, Fujian Agriculture and Forestry University, Fuzhou, China
+
+^8^Functional and Evolutionary Entomology, Terra, Gembloux Agro-Bio Tech, University of Liege, Passage des Déportés 2, 5030 Gembloux, Belgium.
+
+^9^UNESCO Chair on Community Sustainability: From Local to Global, Dept. Biol. Sci., Brock University, Canada
+
+^10^Gulbali Institute, School of Agriculture, Environment and Veterinary Sciences, Charles Sturt University, Orange NSW 2800, Australia
+
+^11^Agriculture and Agri-Food Canada, Lethbridge Research Centre, Lethbridge, AB, Canada
+
+^12^Ministry of Agriculture and Livestock Development, Singhadurbar, Nepal
+
+^13^Jamile Queiroz-Sousa
+
+^14^College of Life Sciences, Zhejiang Normal University, Jinhua 321004, China
+
+^15^Department of Entomology, Faculty of Agriculture, Bangladesh Agricultural University, Mymensingh-2202, Bangladesh
+
+^16^Ornithology Section of the Zoology Department, National Museums of Kenya, PO Box 40658- 00100, GPO. Nairobi, Kenya
+^17^Department of Biological Sciences, University of Calgary, Calgary, AB, Canada
+
+^18^Department of Biological Sciences, Brock University, St. Catharines, ON, Canada
+
+^19^Artificial Intelligence and Cyber Futures Centre, Charles Sturt University, Orange NSW 2800, Australia
+
+^20^Applied Biosciences, Macquarie University, Sydney, Australia
+
+^21^Yunnan Key Laboratory of Forest Ecosystem Stability and Global Change, Xishuangbanna Tropical Botanical Garden, Chinese Academy of Sciences, Menglun, Mengla, Yunnan 666303, China
+
+^22^Bio-Protection Research Centre, Lincoln University, New Zealand
+
+^23^Fujian Key Laboratory for Monitoring and Integrated Management of Crop Pests, Fujian Engineering Research Center for Green Pest Management, Institute of Plant Protection, Fujian Academy of Agricultural Sciences, Fuzhou 350013, China
+
+^24^State Key Laboratory of Rice Biology, Key Laboratory of Molecular Biology of Crop Pathogens and Insects, Ministry of Agriculture, Zhejiang University, Hangzhou, China
+
+^25^Independent researcher, Spain
+
+^26^National Institute of Agricultural Botany (NIAB), Department of Pest & Pathogen Ecology, East Malling, Kent ME19 6BJ United Kingdom
+
+^13^Department of Agroecology, Flakkebjerg Research Centre, Aarhus University, 4200 Slagelse, Denmark
+
+^§^These authors contributed equally to this work.
+
+^†^Deceased; contributed to this work prior to passing
+
+^\*^Corresponding authors: msyou@fafu.edu.cn, gabor.lovei@agro.au.dk, pozsgaig@coleoptera.hu
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  echo = FALSE,
+  warning = FALSE,
+  message = FALSE,
+  fig.align = "center",
+  dev = c("png", "pdf"),
+  dpi = 300,
+  fig.path = "figures/"
+)
+options(kableExtra.auto_format = FALSE)
+options(knitr.table.format = "html")
+source("D:/Gabor/Munka/R_functions/bipart_project_G_function.R")
+
+NA20<- function(x)
+{
+x[is.na(x)]<-0
+x}
+
+```
+```{=html}
+<style>
+table caption, p.caption, figcaption {
+  caption-side: top;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+  text-align: left;
+}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  // Convert "Table N" to bold "Supplementary Table N."
+  document.querySelectorAll("table caption").forEach(function(cap) {
+    cap.innerHTML = cap.innerHTML.replace(/Table\s+([0-9]+)[.:\s]*/i, "<strong>Supplementary Table $1.</strong> ");
+  });
+  
+  // Convert "Figure N" to bold "Supplementary Figure N."
+  document.querySelectorAll("p.caption, figcaption").forEach(function(cap) {
+    cap.innerHTML = cap.innerHTML.replace(/Figure\s+([0-9]+)[.:\s]*/i, "<strong>Supplementary Figure $1.</strong> ");
+  });
+});
+</script>
+```
+
+
+```{r loading-packages}
+library(caret)
+library(discrim)
+library(dplyr)
+library(DT)
+library(FSA)
+library(ggplot2)
+library(ggpubr)
+library(ggraph)
+library(ggrepel)
+library(glmmTMB)
+library(gridExtra)
+library(gtable)
+library(igraph)
+library(kableExtra)
+library(readxl)
+library(knitr)
+library(LiblineaR)
+library(pROC)
+library(readr)
+library(reshape2)
+library(textrecipes)
+library(tidymodels)
+library(tidyr)
+library(vegan)
+library(wesanderson)
+
+
+# Create figures directory if it doesn't exist
+if (!dir.exists("figures")) {
+  dir.create("figures", recursive = TRUE)
+}
+
+# Global colour palette for ES / EDS / ESP
+darj_pal <- wes_palette("Darjeeling1")
+col_EDS <- darj_pal[1]
+col_ES  <- darj_pal[2]
+col_ESP <- darj_pal[3]
+
+# use igraph::degree explicitly to avoid namespace conflicts
+degree <- igraph::degree
+count<-dplyr::count
+summarise <- dplyr::summarise
+rename<-dplyr::rename
+
+```
+
+```{r reading-old-data}
+
+ml_eval<-readRDS("ml_eval.rds")
+final_decisions<-readRDS("final_decisions.rds")
+
+```
+
+```{r reading-AI-data}
+folders <- c("Claude", "Gemini_3", "GPT_5-2", "Sonar")
+combined_per_folder <- list()
+
+for (folder in folders) {
+  csv_files <- list.files(
+    path = file.path("../Calculated_data/AI_tests", folder),
+    pattern = "\\.csv$",
+    full.names = TRUE,
+    ignore.case = TRUE)
+  
+  # print(csv_files)
+  folder_df <- NULL
+  
+  for (f in csv_files) {
+    tmp <- read_csv(f, show_col_types = FALSE)
+    # cat(paste(colnames(tmp), collapse = "; "), "\n")
+    
+    tmp <- tmp |>
+      mutate(folder = folder) |>
+      dplyr::select(scopusID, articletitle, abstract, keywords, KW1, KW2, Decision, Reason)
+    
+    if (is.null(folder_df)) {
+      folder_df <- tmp
+    } else {
+      folder_df <- bind_rows(folder_df, tmp)
+    }
+  }
+  combined_per_folder[[folder]] <- folder_df
+}
+
+all_AI <- bind_rows(combined_per_folder, .id = "AI")
+
+load("../Calculated_data/Ollama_test_decisions.RDA")
+
+all_AI<-rbind(all_AI, Ollama_test_decisions)
+
+
+```
+
+```{r load-final-data}
+
+load("../Calculated_data/updated_networks.RDA")
+```
+
+## Hypothetical network input
+
+```{r supplementary-table-prednet, tab.cap="Contents of the hypothetical network input workbook (prednet.xlsx)."}
+prednet_xlsx_path <- "../Raw_data/prednet.xlsx"
+
+if (file.exists(prednet_xlsx_path)) {
+  prednet_tab <- readxl::read_excel(prednet_xlsx_path)
+
+  knitr::kable(
+    prednet_tab,
+    booktabs = TRUE,
+    longtable = TRUE
+  ) |>
+    kableExtra::kable_styling(
+      latex_options = c("repeat_header", "hold_position"),
+      bootstrap_options = c("striped", "hover", "condensed"),
+      full_width = FALSE
+    )
+} else {
+  knitr::kable(
+    data.frame(Note = "File ../Raw_data/prednet.xlsx was not found at render time."),
+    booktabs = TRUE
+  ) |>
+    kableExtra::kable_styling(full_width = FALSE)
+}
+```
+
+## AI Model Performance (LLMs)
+
+```{r ai-comparisons, fig.cap=paste('Metrics for AI:', unique(merged_decisions$AI))}
+ai_decisions_aggregated <- all_AI |>
+  mutate(Decision = ifelse(Decision=="Maybe include", "Include", Decision)) |> 
+  filter(Decision %in% c("Include", "Exclude")) |> 
+  group_by(AI, scopusID) |>
+  summarise(Decision = Decision[1], .groups = 'drop')
+
+
+merged_decisions <- ai_decisions_aggregated |>
+  left_join(final_decisions %>% select(scopusID, human_Decision = Decision), by = "scopusID") |>
+  mutate(
+    actual = factor(ifelse(human_Decision == "Exclude", 0, 1)),
+    pred_label = factor(ifelse(Decision == "Exclude", 0, 1)),
+    pred_score = case_when(
+      Decision == "Exclude" ~ 0,
+      #Decision == "Maybe include" ~ 0.5,
+      Decision == "Include" ~ 1,
+      TRUE ~ NA_real_
+    )
+  ) |>
+  filter(!is.na(human_Decision), !is.na(pred_score))
+
+ai_models <- unique(merged_decisions$AI)
+
+for (ai in ai_models) {
+
+  
+  ai_specific_data <- merged_decisions |> filter(AI == ai)
+  
+  confusion_matrix <- confusionMatrix(ai_specific_data$pred_label, ai_specific_data$actual, positive = "1")
+  
+  precision <- confusion_matrix$byClass["Pos Pred Value"]
+  recall <- confusion_matrix$byClass["Sensitivity"]
+  accuracy <- confusion_matrix$overall["Accuracy"]
+  f2 <- ifelse(is.na(precision) || is.na(recall) || precision + recall == 0,
+               0, (5 * precision * recall) / (4 * precision + recall))
+  
+  performance_metrics <- data.frame(
+    Metric = c("Precision", "Recall", "Accuracy", "F2 Score"),
+    Value = round(c(precision, recall, accuracy, f2), 3)
+  )
+  
+  roc_curve <- roc(ai_specific_data$actual, ai_specific_data$pred_score, quiet = TRUE)
+  auc_val <- auc(roc_curve)
+  roc_curve_plot <- ggroc(roc_curve, legacy.axes = TRUE) +
+    geom_abline(slope = 1, intercept = 0, linetype = "dashed", color = "gray") +
+    ggtitle(paste("ROC Curve (AUC =", round(auc_val, 3), ")")) +
+    theme_minimal()
+  
+  confusion_matrix_table <- as.data.frame(confusion_matrix$table)
+  confusion_matrix_plot <- ggplot(confusion_matrix_table, aes(x = Reference, y = Prediction, fill = Freq)) +
+    geom_tile(color = "white") +
+    geom_text(aes(label = Freq), color = "black", size = 5) +
+    scale_fill_gradient(low = "white", high = "steelblue") +
+    labs(title = "Confusion Matrix", x = "Ground Truth", y = "Predicted") +
+    theme_minimal() +
+    theme(axis.text = element_text(size = 10))
+  
+  metrics_table_grob <- tableGrob(performance_metrics, rows = NULL, theme = ttheme_default(base_size = 10))
+  right_side <- arrangeGrob(metrics_table_grob, confusion_matrix_plot, ncol = 1, heights = c(1, 2))
+  grid.arrange(roc_curve_plot, right_side, ncol = 2, top = paste("Metrics for", ai))
+}
+```
+
+## ML Model Performance Comparison (Non-LLMs)
+
+```{r ml-comparisons, fig.cap=paste("Metrics for", c("Logistic", "RandomForest", "XGBoost", "NaiveBayes", "SVM"))}
+ml_models <- c("Logistic", "RandomForest", "XGBoost", "NaiveBayes", "SVM")
+
+for (ml_model in ml_models) {
+  
+  if (ml_model == "Logistic") {
+    ml_specific_data <- ml_eval %>%
+      mutate(
+        pred_label = factor(ifelse(logit_class == "Include", 1, 0)),
+        actual = factor(ifelse(Decision == "Include", 1, 0)),
+        pred_score = logit_prob
+      )
+  } else if (ml_model == "RandomForest") {
+    ml_specific_data <- ml_eval %>%
+      mutate(
+        pred_label = factor(ifelse(rf_class == "Include", 1, 0)),
+        actual = factor(ifelse(Decision == "Include", 1, 0)),
+        pred_score = rf_prob
+      )
+  } else if (ml_model == "XGBoost") {
+    ml_specific_data <- ml_eval %>%
+      mutate(
+        pred_label = factor(ifelse(xgb_class == "Include", 1, 0)),
+        actual = factor(ifelse(Decision == "Include", 1, 0)),
+        pred_score = xgb_prob
+      )
+  } else if (ml_model == "NaiveBayes") {
+    ml_specific_data <- ml_eval %>%
+      mutate(
+        pred_label = factor(ifelse(nb_class == "Include", 1, 0)),
+        actual = factor(ifelse(Decision == "Include", 1, 0)),
+        pred_score = if("nb_prob" %in% names(ml_eval)) nb_prob else as.numeric(pred_label) - 1
+      )
+  } else if (ml_model == "SVM") {
+    ml_specific_data <- ml_eval %>%
+      mutate(
+        pred_label = factor(ifelse(svm_class == "Include", 1, 0)),
+        actual = factor(ifelse(Decision == "Include", 1, 0)),
+        pred_score = if("svm_prob" %in% names(ml_eval)) svm_prob else as.numeric(pred_label) - 1
+      )
+  }  
+  
+  confusion_matrix <- confusionMatrix(ml_specific_data$pred_label, ml_specific_data$actual, positive = "1")
+  
+  precision <- confusion_matrix$byClass["Pos Pred Value"]
+  recall <- confusion_matrix$byClass["Sensitivity"]
+  accuracy <- confusion_matrix$overall["Accuracy"]
+  f2 <- ifelse(is.na(precision) || is.na(recall) || precision + recall == 0,
+               0, (5 * precision * recall) / (4 * precision + recall))
+  
+  performance_metrics <- data.frame(
+    Metric = c("Precision", "Recall", "Accuracy", "F2 Score"),
+    Value = round(c(precision, recall, accuracy, f2), 3)
+  )
+  
+  # --- SAFE ROC/AUC ---
+  if ("pred_score" %in% names(ml_specific_data)) {
+    
+    roc_df <- ml_specific_data %>%
+      mutate(
+        actual_num = as.numeric(as.character(actual)),
+        pred_score = as.numeric(pred_score)
+      ) %>%
+      filter(!is.na(actual_num), !is.na(pred_score))
+    
+    # We require actual target variables to have two levels to compute ROC
+    if (nrow(roc_df) >= 2 && length(unique(roc_df$actual_num)) == 2) {
+      
+      roc_curve <- pROC::roc(response = roc_df$actual_num,
+                             predictor = roc_df$pred_score,
+                             quiet = TRUE)
+      
+      auc_val <- pROC::auc(roc_curve)
+      
+      roc_curve_plot <- pROC::ggroc(roc_curve, legacy.axes = TRUE) +
+        geom_abline(slope = 1, intercept = 0, linetype = "dashed", color = "gray") +
+        ggtitle(paste("ROC Curve (AUC =", round(auc_val, 3), ")")) +
+        theme_minimal()
+      
+    } else {
+      roc_curve_plot <- ggplot() + theme_void() + ggtitle("ROC Curve (AUC = NA)")
+    }
+    
+  } else {
+    roc_curve_plot <- ggplot() + theme_void() + ggtitle("ROC Curve (AUC = NA)")
+  }
+  
+  confusion_matrix_table <- as.data.frame(confusion_matrix$table)
+  confusion_matrix_plot <- ggplot(confusion_matrix_table, aes(x = Reference, y = Prediction, fill = Freq)) +
+    geom_tile(color = "white") +
+    geom_text(aes(label = Freq), color = "black", size = 5) +
+    scale_fill_gradient(low = "white", high = "steelblue") +
+    labs(title = "Confusion Matrix", x = "Ground Truth", y = "Predicted") +
+    theme_minimal() +
+    theme(axis.text = element_text(size = 10))
+  
+  metrics_table_grob <- tableGrob(performance_metrics, rows = NULL,
+                                  theme = ttheme_default(base_size = 10))
+  
+  right_side <- arrangeGrob(metrics_table_grob, confusion_matrix_plot, ncol = 1,
+                            heights = c(1, 2))
+  p_ml <- arrangeGrob(roc_curve_plot, right_side, ncol = 2,
+                      top = paste("Metrics for", ml_model))
+  
+  grid::grid.newpage()
+  grid::grid.draw(p_ml)
+}
+```
+
+## Node degree loss
+
+```{r node-degree-loss-analysis}
+# 1) Per-node degree in predicted and realised networks
+pred_degree_by_node <- data.frame(
+  node_ID     = V(pred_net)$name,
+  node_name   = V(pred_net)$label,
+  node_type   = V(pred_net)$type2,
+  pred_degree = degree(pred_net),
+  stringsAsFactors = FALSE
+)
+
+real_degree_by_node <- data.frame(
+  node_ID     = V(filtered_net)$name,
+  node_name   = V(filtered_net)$label,
+  real_degree = degree(filtered_net),
+  stringsAsFactors = FALSE
+)
+
+degree_comparison <- pred_degree_by_node |>
+  left_join(real_degree_by_node, by = "node_name") |>
+  mutate(
+    real_degree      = ifelse(is.na(real_degree), 0, real_degree),
+    degree_loss      = pred_degree - real_degree,
+    degree_loss_prop = degree_loss / pred_degree
+  )
+
+# 2) Per-node total paper counts in realised (filtered) network
+real_papers_by_node <- igraph::as_data_frame(filtered_net, what = "edges") |>
+  mutate(weight = ifelse(is.na(weight), 1, weight)) |>
+  group_by(node_name = from) |>
+  summarise(real_total_papers = sum(weight, na.rm = TRUE), .groups = "drop") |>
+  bind_rows(
+    igraph::as_data_frame(filtered_net, what = "edges") |>
+      mutate(weight = ifelse(is.na(weight), 1, weight)) |>
+      group_by(node_name = to) |>
+      summarise(real_total_papers = sum(weight, na.rm = TRUE), .groups = "drop")
+  ) |>
+  group_by(node_name) |>
+  summarise(real_total_papers = sum(real_total_papers, na.rm = TRUE), .groups = "drop") |>
+  mutate(node_name = V(filtered_net)$label[match(node_name, V(filtered_net)$name)])
+
+# 2b) ES/EDS link counts per ESP in PREDICTED network
+pred_edges_esp <- igraph::as_data_frame(pred_net, what = "edges") |>
+  mutate(
+    ESPlabel = V(pred_net)$label[match(from, V(pred_net)$name)],
+    type2    = V(pred_net)$type2[match(to,   V(pred_net)$name)]
+  ) |>
+  filter(type2 %in% c("ES", "EDS"))
+
+esp_counts_pred <- pred_edges_esp |>
+  group_by(ESPlabel, type2) |>
+  summarise(
+    n_links = n(),
+    .groups = "drop"
+  ) |>
+  tidyr::pivot_wider(
+    names_from  = type2,
+    values_from = n_links,
+    values_fill = 0
+  ) |>
+  rename(
+    n_links_ES_pred  = ES,
+    n_links_EDS_pred = EDS
+  )
+
+# 2c) ES/EDS link counts and ES/EDS paper weights per ESP in REALISED network
+real_edges_esp <- igraph::as_data_frame(filtered_net, what = "edges") |>
+  mutate(
+    ESPlabel = V(filtered_net)$label[match(from, V(filtered_net)$name)],
+    type2    = V(filtered_net)$type2[match(to,   V(filtered_net)$name)],
+    weight   = ifelse(is.na(weight), 1, weight)
+  ) |>
+  filter(type2 %in% c("ES", "EDS"))
+
+esp_counts_real <- real_edges_esp |>
+  group_by(ESPlabel, type2) |>
+  summarise(
+    n_links = n(),
+    w_links = sum(weight, na.rm = TRUE),
+    .groups = "drop"
+  ) |>
+  tidyr::pivot_wider(
+    names_from  = type2,
+    values_from = c(n_links, w_links),
+    values_fill = 0
+  ) |>
+  mutate(
+    n_links_ES_real  = dplyr::coalesce(n_links_ES,  0L),
+    n_links_EDS_real = dplyr::coalesce(n_links_EDS, 0L),
+    w_links_ES_real  = dplyr::coalesce(w_links_ES,  0),
+    w_links_EDS_real = dplyr::coalesce(w_links_EDS, 0)
+  ) |>
+  select(
+    ESPlabel,
+    n_links_ES_real,
+    n_links_EDS_real,
+    w_links_ES_real,
+    w_links_EDS_real
+  )
+
+# 3) Base node-level summary: degrees + total papers for all nodes
+node_level_summary <- degree_comparison |>
+  left_join(real_papers_by_node, by = "node_name") |>
+  mutate(
+    real_total_papers = ifelse(is.na(real_total_papers), 0, real_total_papers)
+  )
+
+# 3b) ESP node summary with separate predicted vs realised ES/EDS counts
+esp_nodes_summary <- node_level_summary |>
+  filter(node_type == "ESP") |>
+  left_join(esp_counts_pred, by = c("node_name" = "ESPlabel")) |>
+  left_join(esp_counts_real, by = c("node_name" = "ESPlabel")) |>
+  mutate(
+    n_links_ES_pred  = dplyr::coalesce(n_links_ES_pred,  0L),
+    n_links_EDS_pred = dplyr::coalesce(n_links_EDS_pred, 0L),
+    n_links_ES_real  = dplyr::coalesce(n_links_ES_real,  0L),
+    n_links_EDS_real = dplyr::coalesce(n_links_EDS_real, 0L),
+    w_links_ES_real  = dplyr::coalesce(w_links_ES_real,  0),
+    w_links_EDS_real = dplyr::coalesce(w_links_EDS_real, 0),
+    pred_degree_fmt = sprintf(
+      "%d (ES %d; EDS %d)",
+      pred_degree, n_links_ES_pred, n_links_EDS_pred
+    ),
+    real_degree_fmt = sprintf(
+      "%d (ES %d; EDS %d)",
+      real_degree, n_links_ES_real, n_links_EDS_real
+    ),
+    papers_fmt = sprintf(
+      "%d (ES %g; EDS %g)",
+      real_total_papers, w_links_ES_real, w_links_EDS_real
+    )
+  )
+
+# 4) Three tables: ES, EDS, ESP
+
+# ES nodes: plain degrees + total papers
+es_nodes_table <- node_level_summary |>
+  filter(node_type == "ES") |>
+  mutate(Abbreviation = abbreviate(node_name, 6, method = "left.kept")) |>
+  select(node_name, Abbreviation, pred_degree, real_degree, real_total_papers) |>
+  arrange(node_name)
+
+# EDS nodes: plain degrees + total papers
+eds_nodes_table <- node_level_summary |>
+  filter(node_type == "EDS") |>
+  mutate(Abbreviation = abbreviate(node_name, 6, method = "left.kept")) |>
+  select(node_name, Abbreviation, pred_degree, real_degree, real_total_papers) |>
+  arrange(node_name)
+
+# ESP nodes: degrees and realised evidence with ES/EDS breakdown in brackets
+esp_nodes_table <- esp_nodes_summary |>
+  mutate(Abbreviation = abbreviate(node_name, 6, method = "left.kept")) |>
+  select(node_name, Abbreviation, pred_degree_fmt, real_degree_fmt, papers_fmt) |>
+  arrange(node_name)
+
+```
+
+```{r node-degree-es-table, tab.cap="ES nodes: degree in predicted and realised networks and total realised papers per node."}
+kable(
+  es_nodes_table,
+  col.names = c("Node", "Abbr.", "Pred. degree", "Real. degree", "Real. total papers")
+) |>
+  kable_styling(bootstrap_options = c("striped", "hover"), full_width = FALSE)
+
+```
+
+```{r node-degree-eds-table, tab.cap="EDS nodes: degree in predicted and realised networks and total realised papers per node."}
+kable(
+  eds_nodes_table,
+  col.names = c("Node", "Abbr.", "Pred. degree", "Real. degree", "Real. total papers")
+) |>
+  kable_styling(bootstrap_options = c("striped", "hover"), full_width = FALSE)
+
+```
+
+```{r node-degree-esp-table, tab.cap="ESP nodes: degrees and realised evidence (ES/EDS links and paper weights in brackets)."}
+
+kable(
+  esp_nodes_table,
+  col.names = c("Node", "Abbr.",
+                "Pred. degree (ES; EDS)",
+                "Real. degree (ES; EDS)",
+                "Real. papers (ES; EDS)")
+) |>
+  kable_styling(bootstrap_options = c("striped", "hover"), full_width = FALSE)
+
+# Nodes present and connected in predicted, but degree 0 in realised
+excluded_nodes <- degree_comparison  |> 
+  filter(pred_degree > 0, real_degree == 0) |> 
+  arrange(node_type, node_name)
+
+excluded_ES  <- excluded_nodes  |> 
+  filter(node_type == "ES")  |>  
+  distinct() |> 
+  pull(node_name)
+
+excluded_EDS <- excluded_nodes  |> 
+  filter(node_type == "EDS")  |>  
+  distinct() |> 
+  pull(node_name)
+
+excluded_ESP <- excluded_nodes  |> 
+  filter(node_type == "ESP")  |>  
+  distinct() |> 
+  pull(node_name)
+
+# Summarise loss by node type (ES, EDS, ESP)
+degree_loss_by_type <- degree_comparison |>
+  filter(node_type %in% c("ES", "EDS")) |>
+  group_by(node_type) |>
+  summarise(
+    n_nodes        = n(),
+    mean_loss      = mean(degree_loss),
+    sd_loss        = sd(degree_loss),
+    mean_loss_prop = mean(degree_loss_prop, na.rm = TRUE),
+    sd_loss_prop   = sd(degree_loss_prop,   na.rm = TRUE),
+    .groups        = "drop"
+  )
+
+# Statistical test
+es_loss <- degree_comparison |>
+  filter(node_type == "ES") |>
+  pull(degree_loss)
+
+eds_loss <- degree_comparison |>
+  filter(node_type == "EDS") |>
+  pull(degree_loss)
+
+set.seed(123)
+loss_wilcox <- wilcox.test(
+  jitter(eds_loss, amount = 0.01),
+  jitter(es_loss, amount = 0.01),
+  alternative = "greater"
+)
+
+
+```
+
+```{r node-degree-loss-plot, fig.cap="Distribution of degree loss (predicted minus realised) for ES vs EDS nodes. EDS nodes (red) show a rightward shift, indicating greater loss of connectivity relative to ES nodes (green)."}
+degree_comparison |>
+  filter(node_type %in% c("ES", "EDS")) |>
+  ggplot(aes(x = degree_loss, fill = node_type)) +
+  geom_histogram(position = "identity", alpha = 0.5, bins = 15, color = "white") +
+  scale_fill_manual(values = c("ES" = darj_pal[2], "EDS" = darj_pal[1]), labels = c("ES", "EDS")) +
+  labs(
+    x = "Degree loss (predicted – realised)",
+    y = "Frequency",
+    fill = "Node type"
+  ) +
+  theme_minimal() +
+  theme(legend.position = "top")
+```
+
+
+## Network projections
+
+```{r ES-EDS-projecton-tab}
+
+## PREDICTED ES/EDS PROJECTION TABLE
+pred_eseds_edges <- igraph::as_data_frame(pred_net_pr_ES, what = "edges") |>
+  mutate(
+    from_label = V(pred_net_pr_ES)$label[match(from, V(pred_net_pr_ES)$name)],
+    to_label   = V(pred_net_pr_ES)$label[match(to,   V(pred_net_pr_ES)$name)],
+    from_type  = V(pred_net_pr_ES)$type2[match(from, V(pred_net_pr_ES)$name)],
+    to_type    = V(pred_net_pr_ES)$type2[match(to,   V(pred_net_pr_ES)$name)],
+    weight     = ifelse(is.na(weight), 1, weight)
+  )
+
+pred_eseds_from <- pred_eseds_edges |>
+  transmute(
+    node_label = from_label,
+    node_type  = from_type,
+    neigh_type = to_type,
+    link_count = 1L,
+    esp_count  = weight
+  )
+
+pred_eseds_to <- pred_eseds_edges |>
+  transmute(
+    node_label = to_label,
+    node_type  = to_type,
+    neigh_type = from_type,
+    link_count = 1L,
+    esp_count  = weight
+  )
+
+pred_eseds_summary <- bind_rows(pred_eseds_from, pred_eseds_to) |>
+  group_by(node_label, node_type, neigh_type) |>
+  summarise(
+    n_links = sum(link_count),
+    n_esps  = sum(esp_count),
+    .groups = "drop"
+  ) |>
+  pivot_wider(
+    names_from  = neigh_type,
+    values_from = c(n_links, n_esps),
+    values_fill = 0
+  ) |>
+  transmute(
+    ES_EDS_name    = node_label,
+    ES_EDS_type    = node_type,
+    n_links_to_ES_pred  = n_links_ES,
+    n_links_to_EDS_pred = n_links_EDS,
+    n_ESPs_to_ES_pred   = n_esps_ES,
+    n_ESPs_to_EDS_pred  = n_esps_EDS
+  )
+
+## REALISED ES/EDS PROJECTION TABLE
+real_eseds_edges <- igraph::as_data_frame(filtered_net_pr_ES, what = "edges") |>
+  mutate(
+    from_label = V(filtered_net_pr_ES)$label[match(from, V(filtered_net_pr_ES)$name)],
+    to_label   = V(filtered_net_pr_ES)$label[match(to,   V(filtered_net_pr_ES)$name)],
+    from_type  = V(filtered_net_pr_ES)$type2[match(from, V(filtered_net_pr_ES)$name)],
+    to_type    = V(filtered_net_pr_ES)$type2[match(to,   V(filtered_net_pr_ES)$name)],
+    weight     = ifelse(is.na(weight), 1, weight)
+  )
+
+real_eseds_from <- real_eseds_edges |>
+  transmute(
+    node_label = from_label,
+    node_type  = from_type,
+    neigh_type = to_type,
+    link_count = 1L,
+    esp_count  = weight
+  )
+
+real_eseds_to <- real_eseds_edges |>
+  transmute(
+    node_label = to_label,
+    node_type  = to_type,
+    neigh_type = from_type,
+    link_count = 1L,
+    esp_count  = weight
+  )
+
+real_eseds_summary <- bind_rows(real_eseds_from, real_eseds_to) |>
+  group_by(node_label, node_type, neigh_type) |>
+  summarise(
+    n_links = sum(link_count),
+    n_esps  = sum(esp_count),
+    .groups = "drop"
+  ) |>
+  pivot_wider(
+    names_from  = neigh_type,
+    values_from = c(n_links, n_esps),
+    values_fill = 0
+  ) |>
+  transmute(
+    ES_EDS_name    = node_label,
+    ES_EDS_type    = node_type,
+    n_links_to_ES_real  = n_links_ES,
+    n_links_to_EDS_real = n_links_EDS,
+    n_ESPs_to_ES_real   = n_esps_ES,
+    n_ESPs_to_EDS_real  = n_esps_EDS
+  )
+
+## COMBINE PREDICTED + REALISED ES/EDS
+eseds_combined <- pred_eseds_summary |>
+  full_join(real_eseds_summary, by = c("ES_EDS_name", "ES_EDS_type")) |>
+  mutate(
+    n_links_to_ES_pred  = dplyr::coalesce(n_links_to_ES_pred,  0L),
+    n_links_to_EDS_pred = dplyr::coalesce(n_links_to_EDS_pred, 0L),
+    n_ESPs_to_ES_pred   = dplyr::coalesce(n_ESPs_to_ES_pred,   0),
+    n_ESPs_to_EDS_pred  = dplyr::coalesce(n_ESPs_to_EDS_pred,  0),
+    n_links_to_ES_real  = dplyr::coalesce(n_links_to_ES_real,  0L),
+    n_links_to_EDS_real = dplyr::coalesce(n_links_to_EDS_real, 0L),
+    n_ESPs_to_ES_real   = dplyr::coalesce(n_ESPs_to_ES_real,   0),
+    n_ESPs_to_EDS_real  = dplyr::coalesce(n_ESPs_to_EDS_real,  0)
+  ) |>
+  arrange(ES_EDS_type, ES_EDS_name)
+
+```
+
+```{r eseds-projection-table, tab.cap="ES/EDS bundle structure in predicted and realised networks. For each ecosystem service (ES) or disservice (EDS), the number of ES and EDS neighbours in the projection network (bundled through shared ESPs) and the total number of ESPs mediating those bundles are shown separately for predicted and realised networks."}
+kable(
+  eseds_combined,
+  col.names = c(
+    "ES/EDS",
+    "Type",
+    "Links (ES)",
+    "Links (EDS)",
+    "ESPs (ES)",
+    "ESPs (EDS)",
+    "Links (ES)",
+    "Links (EDS)",
+    "ESPs (ES)",
+    "ESPs (EDS)"
+  ),
+  digits = 0,
+  align = "lcccccccccc"
+) |>
+  kable_styling(
+    bootstrap_options = c("striped", "hover", "condensed"),
+    full_width = FALSE
+  ) |>
+  add_header_above(c(" " = 2, "Predicted" = 4, "Realised" = 4))
+
+## PREDICTED ESP PROJECTION TABLE
+pred_esp_labels <- V(pred_net_pr_ESP)$label
+pred_esp_degree_proj <- igraph::degree(pred_net_pr_ESP)
+names(pred_esp_degree_proj) <- V(pred_net_pr_ESP)$label
+
+pred_edges_main <- igraph::as_data_frame(pred_net, what = "edges") |>
+  mutate(
+    from_label = V(pred_net)$label[match(from, V(pred_net)$name)],
+    to_label   = V(pred_net)$label[match(to,   V(pred_net)$name)],
+    from_type  = V(pred_net)$type2[match(from, V(pred_net)$name)],
+    to_type    = V(pred_net)$type2[match(to,   V(pred_net)$name)]
+  )
+
+pred_esp_eseds_edges <- pred_edges_main |>
+  filter(from_type == "ESP", to_type %in% c("ES", "EDS")) |>
+  transmute(
+    ESP        = from_label,
+    ESEDS      = to_label,
+    ESEDS_type = to_type
+  )
+
+pred_eseds_to_esps <- pred_esp_eseds_edges |>
+  distinct(ESP, ESEDS, ESEDS_type) |>
+  group_by(ESEDS, ESEDS_type) |>
+  summarise(n_esps = n(), .groups = "drop")
+
+pred_shared_eseds <- pred_eseds_to_esps |>
+  filter(n_esps >= 2)
+
+pred_esp_shared_eseds <- pred_esp_eseds_edges |>
+  semi_join(pred_shared_eseds, by = c("ESEDS", "ESEDS_type")) |>
+  distinct(ESP, ESEDS, ESEDS_type) |>
+  group_by(ESP, ESEDS_type) |>
+  summarise(n_shared = n(), .groups = "drop") |>
+  pivot_wider(
+    names_from  = ESEDS_type,
+    values_from = n_shared,
+    values_fill = 0
+  )
+
+pred_esp_summary <- tibble(
+  ESP_name         = pred_esp_labels,
+  n_ESPs_linked_to_pred = as.integer(pred_esp_degree_proj[pred_esp_labels])
+) |>
+  left_join(pred_esp_shared_eseds, by = c("ESP_name" = "ESP")) |>
+  mutate(
+    ES  = dplyr::coalesce(ES,  0L),
+    EDS = dplyr::coalesce(EDS, 0L)
+  ) |>
+  rename(
+    n_shared_ES_pred  = ES,
+    n_shared_EDS_pred = EDS
+  )
+
+## REALISED ESP PROJECTION TABLE
+real_esp_labels <- V(filtered_net_pr_ESP)$label
+real_esp_degree_proj <- igraph::degree(filtered_net_pr_ESP)
+names(real_esp_degree_proj) <- V(filtered_net_pr_ESP)$label
+
+real_edges_main <- igraph::as_data_frame(filtered_net, what = "edges") |>
+  mutate(
+    from_label = V(filtered_net)$label[match(from, V(filtered_net)$name)],
+    to_label   = V(filtered_net)$label[match(to,   V(filtered_net)$name)],
+    from_type  = V(filtered_net)$type2[match(from, V(filtered_net)$name)],
+    to_type    = V(filtered_net)$type2[match(to,   V(filtered_net)$name)]
+  )
+
+real_esp_eseds_edges <- real_edges_main |>
+  filter(from_type == "ESP", to_type %in% c("ES", "EDS")) |>
+  transmute(
+    ESP        = from_label,
+    ESEDS      = to_label,
+    ESEDS_type = to_type
+  )
+
+real_eseds_to_esps <- real_esp_eseds_edges |>
+  distinct(ESP, ESEDS, ESEDS_type) |>
+  group_by(ESEDS, ESEDS_type) |>
+  summarise(n_esps = n(), .groups = "drop")
+
+real_shared_eseds <- real_eseds_to_esps |>
+  filter(n_esps >= 2)
+
+real_esp_shared_eseds <- real_esp_eseds_edges |>
+  semi_join(real_shared_eseds, by = c("ESEDS", "ESEDS_type")) |>
+  distinct(ESP, ESEDS, ESEDS_type) |>
+  group_by(ESP, ESEDS_type) |>
+  summarise(n_shared = n(), .groups = "drop") |>
+  pivot_wider(
+    names_from  = ESEDS_type,
+    values_from = n_shared,
+    values_fill = 0
+  )
+
+real_esp_summary <- tibble(
+  ESP_name         = real_esp_labels,
+  n_ESPs_linked_to_real = as.integer(real_esp_degree_proj[real_esp_labels])
+) |>
+  left_join(real_esp_shared_eseds, by = c("ESP_name" = "ESP")) |>
+  mutate(
+    ES  = dplyr::coalesce(ES,  0L),
+    EDS = dplyr::coalesce(EDS, 0L)
+  ) |>
+  rename(
+    n_shared_ES_real  = ES,
+    n_shared_EDS_real = EDS
+  )
+
+## COMBINE PREDICTED + REALISED ESP
+esp_combined <- pred_esp_summary |>
+  full_join(real_esp_summary, by = "ESP_name") |>
+  mutate(
+    n_ESPs_linked_to_pred = dplyr::coalesce(n_ESPs_linked_to_pred, 0L),
+    n_shared_ES_pred      = dplyr::coalesce(n_shared_ES_pred,      0L),
+    n_shared_EDS_pred     = dplyr::coalesce(n_shared_EDS_pred,     0L),
+    n_ESPs_linked_to_real = dplyr::coalesce(n_ESPs_linked_to_real, 0L),
+    n_shared_ES_real      = dplyr::coalesce(n_shared_ES_real,      0L),
+    n_shared_EDS_real     = dplyr::coalesce(n_shared_EDS_real,     0L)
+  ) |>
+  arrange(ESP_name)
+
+```
+
+```{r esp-projection-table, tab.cap="ESP projection structure in predicted and realised networks. For each ecosystem service provider (ESP), the degree in the ESP projection network (number of other ESPs linked through shared services/disservices) and the number of ES and EDS that are shared with at least one other ESP are shown separately for predicted and realised networks."}
+kable(
+  esp_combined,
+  col.names = c(
+    "ESP",
+    "Linked ESPs",
+    "Shared ES",
+    "Shared EDS",
+    "Linked ESPs",
+    "Shared ES",
+    "Shared EDS"
+  ),
+  digits = 0,
+  align = "lcccccc"
+) |>
+  kable_styling(
+    bootstrap_options = c("striped", "hover", "condensed"),
+    full_width = FALSE
+  ) |>
+  add_header_above(c(" " = 1, "Predicted" = 3, "Realised" = 3))
+
+
+
+
+```
+
+```{r projected-network-figures, echo=FALSE, results='asis', fig.show='hold', out.width='100%'}
+
+## Helper: recreate old bipart_project_G(..., return = "Table") style output
+## from an already generated projection igraph object.
+## Assumes vertex attributes:
+##   - name   : internal id
+##   - label  : plotting label
+##   - type2  : "ES" / "EDS" for ES-EDS projections
+## and edge attribute:
+##   - weight : weighted projection strength
+## For binary = TRUE, every realised/predicted projected edge is counted as 1.
+## For binary = FALSE, edge weight is used.
+
+projection_table_from_igraph <- function(g, binary = FALSE) {
+  stopifnot(igraph::is_igraph(g))
+
+  vdf <- tibble::tibble(
+    node_id   = as.character(igraph::V(g)$name),
+    node_name = dplyr::coalesce(as.character(igraph::V(g)$label),
+                                as.character(igraph::V(g)$name)),
+    node_type = as.character(igraph::V(g)$type2)
+  )
+
+  edf <- igraph::as_data_frame(g, what = "edges")
+
+if (!"weight" %in% names(edf)) {
+  edf$weight <- 1
+} else {
+  edf$weight[is.na(edf$weight)] <- 1
+}
+
+edf <- edf |>
+  dplyr::mutate(
+    from = as.character(.data$from),
+    to   = as.character(.data$to)
+  )
+
+  if (binary) {
+    edf$weight <- 1
+  }
+
+  ## mimic symmetric ordered table like old function:
+  ## each undirected edge contributes A->B and B->A
+  tab <- dplyr::bind_rows(
+    edf |>
+      dplyr::transmute(from, to, all_links = weight),
+    edf |>
+      dplyr::transmute(from = to, to = from, all_links = weight)
+  ) |>
+    dplyr::left_join(
+      vdf |>
+        dplyr::select(node_id, from_name = node_name),
+      by = c("from" = "node_id")
+    ) |>
+    dplyr::left_join(
+      vdf |>
+        dplyr::select(node_id, to_name = node_name, to_type = node_type),
+      by = c("to" = "node_id")
+    ) |>
+    dplyr::mutate(
+      ES_links  = dplyr::if_else(.data$to_type == "ES",  .data$all_links, 0),
+      EDS_links = dplyr::if_else(.data$to_type == "EDS", .data$all_links, 0)
+    ) |>
+    dplyr::group_by(.data$from, .data$to, .data$from_name, .data$to_name) |>
+    dplyr::summarise(
+      all_links = sum(.data$all_links, na.rm = TRUE),
+      ES_links  = sum(.data$ES_links, na.rm = TRUE),
+      EDS_links = sum(.data$EDS_links, na.rm = TRUE),
+      .groups = "drop"
+    ) |>
+    dplyr::filter(.data$from != .data$to)
+
+tab_sym <- dplyr::bind_rows(
+  tab,
+  tab |>
+    dplyr::transmute(
+      from = to,
+      to = from,
+      from_name = to_name,
+      to_name = from_name,
+      all_links,
+      ES_links,
+      EDS_links
+    )
+) |>
+  dplyr::group_by(from, to, from_name, to_name) |>
+  dplyr::summarise(
+    all_links = sum(all_links, na.rm = TRUE),
+    ES_links  = sum(ES_links, na.rm = TRUE),
+    EDS_links = sum(EDS_links, na.rm = TRUE),
+    .groups = "drop"
+  )
+
+tab_sym
+}
+
+## Helper: add plotting columns exactly like old code
+prep_proj_plot_df <- function(x) {
+  x |>
+    dplyr::mutate(
+      ratio = dplyr::if_else(
+        (.data$ES_links + .data$EDS_links) == 0,
+        0,
+        (.data$ES_links - .data$EDS_links) / (.data$ES_links + .data$EDS_links)
+      ),
+      from_abbr = abbreviate(.data$from_name, 6, method = "left.kept"),
+      to_abbr   = abbreviate(.data$to_name,   6, method = "left.kept")
+    )
+}
+
+## ------------------------------------------------------------------
+## PROJECTION 1 = ESP projection
+## Important:
+## To recreate the old ratio correctly for ESP projection, we cannot rely on the
+## projected ESP graph alone, because ratio depends on whether an ESP-ESP tie is
+## mediated by ES or EDS.
+## So for projection 1 we rebuild the pairwise table from the original bipartite
+## graphs already created in your new workflow: pred_net and filtered_net.
+## ------------------------------------------------------------------
+
+esp_projection_table_from_bipartite <- function(g_bip, binary = FALSE) {
+  stopifnot(igraph::is_igraph(g_bip))
+
+  vdf <- tibble::tibble(
+    node_id   = as.character(igraph::V(g_bip)$name),
+    node_name = dplyr::coalesce(as.character(igraph::V(g_bip)$label),
+                                as.character(igraph::V(g_bip)$name)),
+    node_type = as.character(igraph::V(g_bip)$type2)
+  )
+
+  edf <- igraph::as_data_frame(g_bip, what = "edges")
+edf <- as.data.frame(edf)
+
+if (!"weight" %in% names(edf)) {
+  edf$weight <- 1
+} else {
+  edf$weight[is.na(edf$weight)] <- 1
+}
+
+edf$from <- as.character(edf$from)
+edf$to   <- as.character(edf$to)
+
+edf <- edf |>
+  dplyr::left_join(
+    vdf |>
+      dplyr::select(node_id, from_name = node_name, from_type = node_type),
+    by = c("from" = "node_id")
+  ) |>
+  dplyr::left_join(
+    vdf |>
+      dplyr::select(node_id, to_name = node_name, to_type = node_type),
+    by = c("to" = "node_id")
+  )
+
+  ## Keep ESP -> ES/EDS relations only
+  esp_eseds <- edf |>
+    dplyr::filter(.data$from_type == "ESP", .data$to_type %in% c("ES", "EDS")) |>
+    dplyr::transmute(
+      ESP_id   = .data$from,
+      ESP_name = .data$from_name,
+      ESEDS_id = .data$to,
+      ESEDS_name = .data$to_name,
+      ESEDS_type = .data$to_type,
+      weight = if (binary) 1 else weight
+    )
+
+  ## For each ESP, find all other ESPs sharing any ES/EDS neighbour
+  out <- purrr::map_dfr(unique(esp_eseds$ESP_id), function(n) {
+    temp <- esp_eseds |>
+      dplyr::filter(.data$ESP_id == n)
+
+    newdf <- esp_eseds |>
+      dplyr::filter(.data$ESEDS_id %in% temp$ESEDS_id)
+
+    aggr_all <- newdf |>
+      dplyr::group_by(.data$ESP_id, .data$ESP_name) |>
+      dplyr::summarise(all_links = sum(.data$weight), .groups = "drop")
+
+    aggr_es <- newdf |>
+      dplyr::filter(.data$ESEDS_type == "ES") |>
+      dplyr::group_by(.data$ESP_id) |>
+      dplyr::summarise(ES_links = sum(.data$weight), .groups = "drop")
+
+    aggr_eds <- newdf |>
+      dplyr::filter(.data$ESEDS_type == "EDS") |>
+      dplyr::group_by(.data$ESP_id) |>
+      dplyr::summarise(EDS_links = sum(.data$weight), .groups = "drop")
+
+    aggr_df <- aggr_all |>
+      dplyr::left_join(aggr_es,  by = "ESP_id") |>
+      dplyr::left_join(aggr_eds, by = "ESP_id") |>
+      dplyr::mutate(
+        ES_links  = dplyr::coalesce(.data$ES_links, 0),
+        EDS_links = dplyr::coalesce(.data$EDS_links, 0),
+        from      = n,
+        from_name = unique(temp$ESP_name)
+      ) |>
+      dplyr::rename(
+        to      = .data$ESP_id,
+        to_name = .data$ESP_name
+      ) |>
+      dplyr::select(.data$from, .data$to, .data$from_name, .data$to_name,
+                    .data$all_links, .data$ES_links, .data$EDS_links) |>
+      dplyr::filter(.data$from != .data$to)
+
+    aggr_df
+  })
+
+out_sym <- dplyr::bind_rows(
+  out,
+  out |>
+    dplyr::transmute(
+      from = to,
+      to = from,
+      from_name = to_name,
+      to_name = from_name,
+      all_links = all_links,
+      ES_links = ES_links,
+      EDS_links = EDS_links
+    )
+) |>
+  dplyr::group_by(from, to, from_name, to_name) |>
+  dplyr::summarise(
+    all_links = sum(all_links, na.rm = TRUE),
+    ES_links  = sum(ES_links, na.rm = TRUE),
+    EDS_links = sum(EDS_links, na.rm = TRUE),
+    .groups = "drop"
+  ) |>
+  dplyr::filter(.data$from != .data$to)
+
+out_sym
+}
+
+## ------------------------------------------------------------------
+## PROJECTION TABLES
+## ------------------------------------------------------------------
+
+## Predicted
+pred_proj1 <- esp_projection_table_from_bipartite(pred_net, binary = FALSE) |>
+  prep_proj_plot_df()
+
+pred_proj2 <- projection_table_from_igraph(pred_net_pr_ES, binary = FALSE) |>
+  prep_proj_plot_df()
+
+## Realised weighted
+fil_w_proj1 <- esp_projection_table_from_bipartite(filtered_net, binary = FALSE) |>
+  prep_proj_plot_df()
+
+fil_w_proj2 <- projection_table_from_igraph(filtered_net_pr_ES, binary = FALSE) |>
+  prep_proj_plot_df()
+
+## Realised unweighted
+fil_nw_proj1 <- esp_projection_table_from_bipartite(filtered_net, binary = TRUE) |>
+  prep_proj_plot_df()
+
+fil_nw_proj2 <- projection_table_from_igraph(filtered_net_pr_ES, binary = TRUE) |>
+  prep_proj_plot_df()
+
+## ------------------------------------------------------------------
+## PLOTS
+## ------------------------------------------------------------------
+
+pred_proj1_plot <- ggplot(pred_proj1, aes(from_abbr, to_abbr)) +
+  geom_point(aes(size = all_links, colour = ratio)) +
+  scale_color_gradient2(
+  midpoint = 0,
+  low = darj_pal[1],
+  mid = "white",
+  high = darj_pal[2],
+  space = "Lab"
+) +
+  theme(axis.text.x = element_text(angle = 90)) +
+  labs(title = "Predicted network - Projection 1", x = "From", y = "To")
+
+pred_proj2_plot <- ggplot(pred_proj2, aes(from_abbr, to_abbr)) +
+  geom_point(aes(size = all_links, colour = ratio)) +
+  scale_color_gradient2(
+  midpoint = 0,
+  low = darj_pal[1],
+  mid = "white",
+  high = darj_pal[2],
+  space = "Lab"
+)+
+  theme(axis.text.x = element_text(angle = 90)) +
+  labs(title = "Predicted network - Projection 2", x = "From", y = "To")
+
+fil_w_proj1_plot <- ggplot(fil_w_proj1, aes(from_abbr, to_abbr)) +
+  geom_point(aes(size = all_links, colour = ratio)) +
+  scale_color_gradient2(
+  midpoint = 0,
+  low = darj_pal[1],
+  mid = "white",
+  high = darj_pal[2],
+  space = "Lab"
+) +
+  theme(axis.text.x = element_text(angle = 90)) +
+  labs(title = "Filtered network with weights - Projection 1", x = "From", y = "To")
+
+fil_w_proj2_plot <- ggplot(fil_w_proj2, aes(from_abbr, to_abbr)) +
+  geom_point(aes(size = all_links, colour = ratio)) +
+  scale_color_gradient2(
+  midpoint = 0,
+  low = darj_pal[1],
+  mid = "white",
+  high = darj_pal[2],
+  space = "Lab"
+)+
+  theme(axis.text.x = element_text(angle = 90)) +
+  labs(title = "Filtered network with weights - Projection 2", x = "From", y = "To")
+
+fil_nw_proj1_plot <- ggplot(fil_nw_proj1, aes(from_abbr, to_abbr)) +
+  geom_point(aes(size = all_links, colour = ratio)) +
+  scale_color_gradient2(
+  midpoint = 0,
+  low = darj_pal[1],
+  mid = "white",
+  high = darj_pal[2],
+  space = "Lab"
+) +
+  theme(axis.text.x = element_text(angle = 90)) +
+  labs(title = "Filtered network, no weights - Projection 1", x = "From", y = "To")
+
+fil_nw_proj2_plot <- ggplot(fil_nw_proj2, aes(from_abbr, to_abbr)) +
+  geom_point(aes(size = all_links, colour = ratio)) +
+  scale_color_gradient2(
+  midpoint = 0,
+  low = darj_pal[1],
+  mid = "white",
+  high = darj_pal[2],
+  space = "Lab"
+) +
+  theme(axis.text.x = element_text(angle = 90)) +
+  labs(title = "Filtered network, no weights - Projection 2", x = "From", y = "To")
+
+
+
+```{r supp-fig-proj-1, echo=FALSE, fig.cap="Predicted network - Projection 1"}
+pred_proj1_plot
+```
+
+```{r supp-fig-proj-2, echo=FALSE, fig.cap="Predicted network - Projection 2"}
+pred_proj2_plot
+```
+
+```{r supp-fig-proj-3, echo=FALSE, fig.cap="Filtered network with weights - Projection 1"}
+fil_w_proj1_plot
+```
+
+```{r supp-fig-proj-4, echo=FALSE, fig.cap="Filtered network with weights - Projection 2"}
+fil_w_proj2_plot
+```
+
+```{r supp-fig-proj-5, echo=FALSE, fig.cap="Filtered network, no weights - Projection 1"}
+fil_nw_proj1_plot
+```
+
+```{r supp-fig-proj-6, echo=FALSE, fig.cap="Filtered network, no weights - Projection 2"}
+fil_nw_proj2_plot
+```
+
+
+
+
+
+
+
